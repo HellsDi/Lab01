@@ -1,3 +1,6 @@
 .vscode
 .gitattributes
 CMakerLists.txt
+.vs
+.vscode
+

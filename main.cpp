@@ -1,23 +1,30 @@
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
+// Запускается и завершается метод main, который вычисляет площадь поверхности и объем шара
 
 int main(){
     const float pi = 3.1415f;
-    unsigned int a;
-    cin >> a;
-    cout << a<<endl;
-    
+
     float radius;
     cout << "radius = ";
     cin >> radius;
-    
+
+
+
     float SurfaceArea = pow(radius,2)*4*pi;
-    float Volume = (4 * pow(radius,3)*pi)/3;
+    double Volume = (4 * abs(pow(radius,3))*pi)/3;
 
-    cout<< "Sarface area = "<< SurfaceArea << " type = float, bit = 32"<< endl;
-    cout<< "Volume = "<< Volume << " type = float, bit = 32"<< endl;
 
+    cout<< "Sarface area = "<< SurfaceArea << endl;
+    cout<< "Type = "<< typeid(SurfaceArea).name()  << " Size = " << sizeof(SurfaceArea) << " MaxSize = "<< numeric_limits<float>::max()<<" <MinSize = "<< numeric_limits<float>::min()<<endl;
+
+    cout<< "Volume = "<< Volume << endl;
+    cout<< "Type = "<< typeid(Volume).name() << " Size = " << sizeof(Volume)<< " MaxSize = "<< numeric_limits<double>::max() <<" <MinSize = "<<numeric_limits<double>::min()<<endl;
     return 0;
 }
+
+/* Использование float должно быть только положительным для 
+Коррекного вычисления площади поверхности и объема шара*/
